@@ -7,6 +7,8 @@ import { IndexComponent } from './components/index/index.component';
 import { EditComponent } from './components/edit/edit.component';
 import { RouterModule, Routes } from '@angular/router';
 
+import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
+
 const routes: Routes = [
   {
     path: 'create',
@@ -31,7 +33,8 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    SlimLoadingBarModule
   ],
   exports:[RouterModule],
   providers: [],
