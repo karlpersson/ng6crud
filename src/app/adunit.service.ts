@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AdUnit } from './components/index/AdUnit';
 
 @Injectable({
   providedIn: 'root'
@@ -17,4 +18,10 @@ export class AdunitService {
     };
     this.http.post('${this.uri}/add',obj).subscribe(res => console.log('Done'));
   }
+
+  getAdUnits() {
+    return this
+           .http
+           .get(`${this.uri}/adunits`);
+    }
 }
