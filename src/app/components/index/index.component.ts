@@ -22,4 +22,10 @@ export class IndexComponent implements OnInit {
     });
   }
 
+  deleteAdUnit(id) {
+    this.adunitservice.deleteAdUnit(id).subscribe(res => {
+      console.log('Deleted');
+    });
+  }
+
 }

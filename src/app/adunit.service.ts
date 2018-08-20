@@ -38,4 +38,10 @@ export class AdunitService {
     };
     this.http.post(`${this.uri}/adunits/${id}`,obj).subscribe(res => console.log('Done'));
   }
+
+  deleteAdUnit(id) {
+    return this
+              .http
+              .delete(`${this.uri}/adunits/${id}`);
+  }
 }
