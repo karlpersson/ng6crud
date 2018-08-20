@@ -15,6 +15,10 @@ import { AdunitService } from './adunit.service'
 
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+
+import { AppInMemoryApiService } from './in-memory-api/app-in-memory-api.service'
+
 const routes: Routes = [
   {
     path: 'create',
@@ -42,7 +46,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     SlimLoadingBarModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InMemoryWebApiModule.forRoot(AppInMemoryApiService),
   ],
   exports:[RouterModule],
   providers: [AdunitService],

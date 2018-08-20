@@ -9,7 +9,7 @@ import { AdUnit } from './components/index/AdUnit';
 })
 export class AdunitService {
 
-  uri='http://localhost:4000/adunits';
+  uri='http://localhost:4200/adunit';
 
   constructor(private http: HttpClient) { }
 
@@ -18,7 +18,7 @@ export class AdunitService {
       unit_name: unit_name,
       unit_price: unit_price
     };
-    this.http.post('${this.uri}/add',obj).subscribe(res => console.log('Done'));
+    this.http.post(`${this.uri}/adunits/4`,obj).subscribe(res => console.log('Done'));
   }
 
   getAdUnits() {
@@ -28,7 +28,7 @@ export class AdunitService {
     }
 
   editAdUnit(id) {
-    return this.http.get(`$(this.uri)/edit/${id}`);
+    return this.http.get(`${this.uri}/adunits/${id}`);
   }
 
   updateAdUnit(unit_name, unit_price, id) {
@@ -36,6 +36,6 @@ export class AdunitService {
       unit_name: unit_name,
       unit_price: unit_price
     };
-    this.http.post(`${this.uri}/update/${id}`,obj).subscribe(res => console.log('Done'));
+    this.http.post(`${this.uri}/adunits/${id}`,obj).subscribe(res => console.log('Done'));
   }
 }
