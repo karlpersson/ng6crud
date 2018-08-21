@@ -10,6 +10,9 @@ import { APP_BASE_HREF } from '@angular/common';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { StoreModule } from '@ngrx/store';
+import { reducers } from '../../store/app.reducer';
+
 const routes: Routes = [
 ]
 
@@ -20,7 +23,7 @@ describe('EditComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ EditComponent ],
-      imports: [ReactiveFormsModule,    RouterModule.forRoot(routes),HttpClientModule],
+      imports: [ReactiveFormsModule,    RouterModule.forRoot(routes),HttpClientModule, StoreModule.forRoot(reducers)],
       providers: [{provide: APP_BASE_HREF, useValue: '/'}]
     })
     .compileComponents();
