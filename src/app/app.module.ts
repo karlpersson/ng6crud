@@ -19,6 +19,9 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppInMemoryApiService } from './in-memory-api/app-in-memory-api.service'
 
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './store/app.reducer';
+
 const routes: Routes = [
   {
     path: 'create',
@@ -47,7 +50,8 @@ const routes: Routes = [
     SlimLoadingBarModule,
     HttpClientModule,
     ReactiveFormsModule,
-    InMemoryWebApiModule.forRoot(AppInMemoryApiService),
+    InMemoryWebApiModule.forRoot(AppInMemoryApiService), 
+    StoreModule.forRoot(reducers)
   ],
   exports:[RouterModule],
   providers: [AdunitService],
